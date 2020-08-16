@@ -1,8 +1,8 @@
-﻿!function(){
+!function(){
     var inject = function() {
         var loadlist = [];
         var loadable = [];
-        var maxcount = 8;
+        var maxcount = 3;
         var retrydelay = 1000;
 
         var _attr = Image.prototype.setAttribute;
@@ -84,6 +84,9 @@
                 clear();
                 return _replace.apply(this, arguments);
             }
+            window.addEventListener('popstate', function() {
+                clear();
+            });
         }
     };
     var s = document.createElement('script');
